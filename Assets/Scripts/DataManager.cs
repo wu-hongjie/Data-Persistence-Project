@@ -12,6 +12,7 @@ public class DataManager : MonoBehaviour
 
     private void Start()
     {
+        // Debug.Log(Application.persistentDataPath + "/savedata.json");
         if (Instance == null)
         {
             Instance = this;
@@ -45,7 +46,7 @@ public class DataManager : MonoBehaviour
         data.bestScore = bestScore;
         data.bestScorePlayer = bestScorePlayer;
         string json = JsonUtility.ToJson(data);
-        Debug.Log(json);
+        // Debug.Log(json);
         File.WriteAllText(Application.persistentDataPath + "/savedata.json", json);
     }
 
